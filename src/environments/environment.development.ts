@@ -1,0 +1,5 @@
+
+//* DEVELOPMENT, ESTO SERA PARA DESARROLLO ES DECIR CUANDO ESTEMOS TRABAJANDO LOCALMENTE
+export const environment = {
+  API_URL: 'http://localhost:3000/api',
+};
