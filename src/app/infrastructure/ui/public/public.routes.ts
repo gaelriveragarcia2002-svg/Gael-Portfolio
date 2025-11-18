@@ -1,7 +1,19 @@
 import { Routes } from "@angular/router";
-import { LoginComponent } from "./pages/login/login.component";
 
 export const publicRoutes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent}
+  {
+    path: '',
+    //* El Layout suele ser ligero, se puede dejar con 'component' o cambiar a loadComponent si es necesario.
+    loadComponent: () => import('./layout/public-layout.component').then(m => m.PublicLayoutComponent),
+    children: [
+      //*  Redirigir al home por defecto
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+
+      //* Lazy Loading a nivel de componente.
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/home/home-page.component').then(m => m.HomePageComponent)
+      }
+    ]
+  }
 ];

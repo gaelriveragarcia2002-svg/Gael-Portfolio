@@ -7,6 +7,6 @@ export const routes: Routes = [
   },
   {
     path: 'app',
-    loadChildren: () => import('./infrastructure/ui/private/private.routes').then(m => m.applicationRoutes)
+    loadChildren: () => import('./infrastructure/ui/private/private.routes').then(m => m.privateRoutes)
   }
 ];

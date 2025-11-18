@@ -1,3 +1,5 @@
 import { Routes } from "@angular/router";
 
-export const applicationRoutes: Routes = [];
+export const privateRoutes: Routes = [
+
+];
